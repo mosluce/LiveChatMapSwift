@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11535.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ls6-1s-9Iq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11523"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--歡迎-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LiveChatMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +19,91 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UN9-aB-oDk">
+                                <rect key="frame" x="169" y="316" width="37" height="34"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="登入">
+                                    <color key="titleColor" red="0.0" green="0.31013069700000001" blue="0.65001031060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentLoginView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="psp-WH-K8y"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UN9-aB-oDk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ts5-lJ-nGx"/>
+                            <constraint firstItem="UN9-aB-oDk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zpr-K8-A8B"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="歡迎" id="gQ8-Ou-qhk"/>
+                    <connections>
+                        <segue destination="3HV-WO-Akh" kind="show" identifier="MapView" id="PzJ-28-FHJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--聊天地圖-->
+        <scene sceneID="z9S-S4-f54">
+            <objects>
+                <viewController id="3HV-WO-Akh" customClass="MapViewController" customModule="LiveChatMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mnf-Rv-TZo"/>
+                        <viewControllerLayoutGuide type="bottom" id="hB9-hD-aRm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zmw-Ja-ltC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SLu-LC-C3o">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SLu-LC-C3o" firstAttribute="leading" secondItem="Zmw-Ja-ltC" secondAttribute="leading" id="DzS-B9-jnI"/>
+                            <constraint firstAttribute="trailing" secondItem="SLu-LC-C3o" secondAttribute="trailing" id="GUm-Sh-b0r"/>
+                            <constraint firstItem="SLu-LC-C3o" firstAttribute="top" secondItem="mnf-Rv-TZo" secondAttribute="bottom" id="HvD-tJ-UXJ"/>
+                            <constraint firstItem="hB9-hD-aRm" firstAttribute="top" secondItem="SLu-LC-C3o" secondAttribute="bottom" id="wg0-c4-9Ii"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="聊天地圖" id="2xd-3U-4B6"/>
+                    <connections>
+                        <outlet property="mapview" destination="SLu-LC-C3o" id="rGR-0y-15O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ol8-Hx-z4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1790" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="P0Z-kM-AZp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" hidesBarsWhenKeyboardAppears="YES" id="ls6-1s-9Iq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="TBE-QS-7Gx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.31013069700000001" blue="0.65001031060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Eqp-Bf-9l3">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="IIx-9F-QCl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mzO-Ji-KbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="324" y="139"/>
         </scene>
     </scenes>
 </document>

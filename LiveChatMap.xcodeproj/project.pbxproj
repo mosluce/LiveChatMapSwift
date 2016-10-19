@@ -12,6 +12,11 @@
 		44AE93001DB7A43200DC8FE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44AE92FE1DB7A43200DC8FE2 /* Main.storyboard */; };
 		44AE93021DB7A43200DC8FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44AE93011DB7A43200DC8FE2 /* Assets.xcassets */; };
 		44AE93051DB7A43200DC8FE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44AE93031DB7A43200DC8FE2 /* LaunchScreen.storyboard */; };
+		44C6FAE71DB7B7960074D41F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44C6FAE61DB7B7960074D41F /* GoogleService-Info.plist */; };
+		44C6FAEB1DB7BBA00074D41F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C6FAEA1DB7BBA00074D41F /* API.swift */; };
+		44C6FAED1DB7BBAF0074D41F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C6FAEC1DB7BBAF0074D41F /* MapViewController.swift */; };
+		44C6FAEF1DB7BEE90074D41F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C6FAEE1DB7BEE90074D41F /* MapKit.framework */; };
+		44C6FAF01DB7C0550074D41F /* Pods_LiveChatMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D057FE902F9054E3FAC78A /* Pods_LiveChatMap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,13 @@
 		44AE93011DB7A43200DC8FE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44AE93041DB7A43200DC8FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44AE93061DB7A43200DC8FE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44C6FAE61DB7B7960074D41F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		44C6FAEA1DB7BBA00074D41F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		44C6FAEC1DB7BBAF0074D41F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		44C6FAEE1DB7BEE90074D41F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7B6A7AEACE9EEDEFD8D5CCF6 /* Pods-LiveChatMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveChatMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiveChatMap/Pods-LiveChatMap.release.xcconfig"; sourceTree = "<group>"; };
+		952D708804854EEC4B636513 /* Pods-LiveChatMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveChatMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiveChatMap/Pods-LiveChatMap.debug.xcconfig"; sourceTree = "<group>"; };
+		A7D057FE902F9054E3FAC78A /* Pods_LiveChatMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveChatMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C6FAF01DB7C0550074D41F /* Pods_LiveChatMap.framework in Frameworks */,
+				44C6FAEF1DB7BEE90074D41F /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		308A9C8870E69FF1C19E8FF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				952D708804854EEC4B636513 /* Pods-LiveChatMap.debug.xcconfig */,
+				7B6A7AEACE9EEDEFD8D5CCF6 /* Pods-LiveChatMap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		44AE92EE1DB7A43200DC8FE2 = {
 			isa = PBXGroup;
 			children = (
 				44AE92F91DB7A43200DC8FE2 /* LiveChatMap */,
 				44AE92F81DB7A43200DC8FE2 /* Products */,
+				308A9C8870E69FF1C19E8FF8 /* Pods */,
+				50A9B637469BEB14E8E2CF55 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +79,34 @@
 		44AE92F91DB7A43200DC8FE2 /* LiveChatMap */ = {
 			isa = PBXGroup;
 			children = (
+				44C6FAE91DB7BB930074D41F /* Services */,
 				44AE92FA1DB7A43200DC8FE2 /* AppDelegate.swift */,
 				44AE92FC1DB7A43200DC8FE2 /* ViewController.swift */,
+				44C6FAEC1DB7BBAF0074D41F /* MapViewController.swift */,
 				44AE92FE1DB7A43200DC8FE2 /* Main.storyboard */,
 				44AE93011DB7A43200DC8FE2 /* Assets.xcassets */,
 				44AE93031DB7A43200DC8FE2 /* LaunchScreen.storyboard */,
 				44AE93061DB7A43200DC8FE2 /* Info.plist */,
+				44C6FAE61DB7B7960074D41F /* GoogleService-Info.plist */,
 			);
 			path = LiveChatMap;
+			sourceTree = "<group>";
+		};
+		44C6FAE91DB7BB930074D41F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				44C6FAEA1DB7BBA00074D41F /* API.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		50A9B637469BEB14E8E2CF55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44C6FAEE1DB7BEE90074D41F /* MapKit.framework */,
+				A7D057FE902F9054E3FAC78A /* Pods_LiveChatMap.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +116,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44AE93091DB7A43200DC8FE2 /* Build configuration list for PBXNativeTarget "LiveChatMap" */;
 			buildPhases = (
+				AD8A4692008020C59DC1193D /* [CP] Check Pods Manifest.lock */,
 				44AE92F31DB7A43200DC8FE2 /* Sources */,
 				44AE92F41DB7A43200DC8FE2 /* Frameworks */,
 				44AE92F51DB7A43200DC8FE2 /* Resources */,
+				6A99ADADECD1FF52EFFA1652 /* [CP] Embed Pods Frameworks */,
+				F631FF60859346BDA681B5DE /* [CP] Copy Pods Resources */,
+				44C6FAE81DB7B7DB0074D41F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -98,6 +147,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 8E5H4JDK8B;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -126,11 +180,73 @@
 			files = (
 				44AE93051DB7A43200DC8FE2 /* LaunchScreen.storyboard in Resources */,
 				44AE93021DB7A43200DC8FE2 /* Assets.xcassets in Resources */,
+				44C6FAE71DB7B7960074D41F /* GoogleService-Info.plist in Resources */,
 				44AE93001DB7A43200DC8FE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44C6FAE81DB7B7DB0074D41F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 547872fdf00cc561ec9b35fcff496a4205d51d05 911d7f3670ebc33bcc9066f146d780e26e9731d28082c1a368fed3264ddd61b6";
+		};
+		6A99ADADECD1FF52EFFA1652 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiveChatMap/Pods-LiveChatMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD8A4692008020C59DC1193D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F631FF60859346BDA681B5DE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiveChatMap/Pods-LiveChatMap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		44AE92F31DB7A43200DC8FE2 /* Sources */ = {
@@ -138,7 +254,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				44AE92FD1DB7A43200DC8FE2 /* ViewController.swift in Sources */,
+				44C6FAEB1DB7BBA00074D41F /* API.swift in Sources */,
 				44AE92FB1DB7A43200DC8FE2 /* AppDelegate.swift in Sources */,
+				44C6FAED1DB7BBAF0074D41F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,10 +375,12 @@
 		};
 		44AE930A1DB7A43200DC8FE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 952D708804854EEC4B636513 /* Pods-LiveChatMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8E5H4JDK8B;
 				INFOPLIST_FILE = LiveChatMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gotyou.demo.LiveChatMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,10 +390,12 @@
 		};
 		44AE930B1DB7A43200DC8FE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B6A7AEACE9EEDEFD8D5CCF6 /* Pods-LiveChatMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8E5H4JDK8B;
 				INFOPLIST_FILE = LiveChatMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gotyou.demo.LiveChatMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +422,7 @@
 				44AE930B1DB7A43200DC8FE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
